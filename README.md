@@ -1,6 +1,6 @@
 ## introduction
 
-This is a vim syntax plugin for Ansible 2.0, it supports YAML playbooks, Jinja2 templates, and dotini-based 'hosts' files.
+This is a vim syntax plugin for Ansible 2.0, it supports YAML playbooks, Jinja2 templates, and Ansible's `hosts` files.
 
 - YAML playbooks are detected if:
   - they are in the `group_vars` or `host_vars` folder
@@ -8,6 +8,8 @@ This is a vim syntax plugin for Ansible 2.0, it supports YAML playbooks, Jinja2 
   - they are named `playbook.y(a)ml` or `site.y(a)ml`
 - Jinja2 templates are detected if they have a *.j2* suffix
 - Files named `hosts` will be treated as Ansible hosts files
+
+You can also set the filetype to `ansible`, `ansible_template`, or `ansible_hosts` if auto-detection does not work (e.g. `:set ft=ansible`).
 
 This plugin should be quite reliable, as it sources the original formats and simply modifies the highlights as appropriate. This also enables a focus on simplicity and configurability instead of patching bad syntax detection.
 
@@ -39,7 +41,7 @@ This will *always* load these syntaxes for *all* .j2 files, and should be consid
 ##### g:ansible_attribute_highlight
 `let g:ansible_attribute_highlight = "ob"`
 
-Ansible modules use a `key=value` format for specifying module-attributes in playbooks. This highlights those as specified.
+Ansible modules use a `key=value` format for specifying module-attributes in playbooks. This highlights those as specified. This highlight option is also used when highlighting key/value pairs in `hosts` files.
 
 Available flags (bold are defaults):
 
